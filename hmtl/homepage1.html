@@ -19,17 +19,24 @@
     <p class="lead m-b-3">Names</p>
     <div class="col-lg-6">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search.....">
+      <input ng-model="query" type="text" class="form-control" placeholder="Search....." autofocus>
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button">More</button>
       </span>
+        <label class : "formgroup">by:
+        <select ng-model="sortby">
+            <option value="name">Name</option>
+            <option value="phone">Phone number</option>
+        </select>
+
+        </label>
     </div>
   </div>
 </div>
 <div class="list">
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="contact in contacts">
+  <li class="list-group-item" ng-repeat="contact in contacts | filter:query">
   <div>
   <h2>{{contact.name | uppercase}}</h2>
   <h3>{{contact.phone}}</h3>
