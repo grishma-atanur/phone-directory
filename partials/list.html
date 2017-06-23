@@ -1,0 +1,31 @@
+
+<section class="contactlist">
+<div class="container text-xs-center">
+    <h1 class="display-1 m-t-3">Contacts</h1>
+    <p class="lead m-b-3">Names</p>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input ng-model="query" type="text" class="form-control" placeholder="Search....." autofocus>
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">More</button>
+      </span>
+
+        </div>
+    </div>
+</div>
+<div class="list">
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="contact in contacts | filter:query">
+            <div>
+                <h2>{{contact.name | uppercase}}</h2>
+                <h3>{{contact.phone}}</h3>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<div class="alert alert-info">
+    <button type="button" class="btn btn-primary btn-lg" style="float:right;">Add Contact</button>
+</div>
+</section>
