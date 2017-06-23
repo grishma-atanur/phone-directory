@@ -1,4 +1,19 @@
-var myApp = angular.module('myApp', []);
+var myApp= angular.module('myApp', ['ngRoute']);
+myApp.config(function($routeProvider) {
+	$routeProvider
+		.when('/homepage1', {
+			templateUrl: 'homepage1.html',
+			controller: 'MyController'
+		})
+		.when('/edit', {
+			templateUrl: 'edit.html',
+			controller: 'MyController'
+		})
+		.otherwise({
+			redirectTo: '/homepage1'
+		});
+});
+
 
 myApp.controller('MyController',['$scope', function MyController($scope) {
   $scope.contacts= [
