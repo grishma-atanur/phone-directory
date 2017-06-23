@@ -9,40 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
          
-     <script src="../lib/angular/angular.min.js">
+     <script src="../lib/angular/angular.min.js"></script>
          <script src="../lib/angular/angular-route.min.js"></script>
      <script src="../jscript/controllers.js"></script>
-     
   </head>
-  <body class="bg-info" ng-controller="MyController">  
-  <div class="container text-xs-center">
-    <h1 class="display-1 m-t-3">Contacts</h1>
-    <p class="lead m-b-3">Names</p>
-    <div class="col-lg-6">
-    <div class="input-group">
-      <input ng-model="query" type="text" class="form-control" placeholder="Search....." autofocus>
-      <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">More</button>
-      </span>
+     
 
-    </div>
-  </div>
-</div>
-<div class="list">
+  <body class="bg-info" ng-controller="MyController">
 
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="contact in contacts | filter:query">
-  <div>
-  <h2>{{contact.name | uppercase}}</h2>
-  <h3>{{contact.phone}}</h3>
-  </div>
-  </li>
-
-</ul>
-</div>
-<div class="alert alert-info">  
-<button type="button" class="btn btn-primary btn-lg" style="float:right;">Add Contact</button>
- </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
