@@ -23,20 +23,14 @@
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button">More</button>
       </span>
-        <label class : "formgroup">by:
-        <select ng-model="sortby">
-            <option value="name">Name</option>
-            <option value="phone">Phone number</option>
-        </select>
 
-        </label>
     </div>
   </div>
 </div>
 <div class="list">
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="contact in contacts | filter:query orderBy:sortby">
+  <li class="list-group-item" ng-repeat="contact in contacts | filter:query">
   <div>
   <h2>{{contact.name | uppercase}}</h2>
   <h3>{{contact.phone}}</h3>
