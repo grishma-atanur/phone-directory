@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+<title>Phone directory - test</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<script src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+
+<script src="../jscript/controllers.js"></script>
+
+</head>
+<body class="bg-info" ng-view>
+<div class="container text-xs-center">
+<h1 class="display-1 m-t-3">Contacts</h1>
+<p class="lead m-b-3">Names</p>
+<div class="col-lg-6">
+    <div class="input-group">
+        <input ng-model='query' type="text" class="form-control" placeholder="Search....." autofocus>
+  <span class="input-group-btn">
+    <button class="btn btn-primary" type="button">More</button>
+  </span>
+    </div>
+</div>
+</div>
+<div class="list">
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="contact in contacts | filter: query">
+        <div>
+            <h2>{{contact.name | uppercase}}</h2>
+            <h3>{{contact.phone}}</h3>
+        </div>
+    </li>
+
+</ul>
+</div>
+<div class="alert alert-info">
+<button type="button" class="btn btn-primary btn-lg" style="float:right;">Add Contact</button>
+</div>
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
