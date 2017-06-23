@@ -36,7 +36,7 @@
 <div class="list">
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="contact in contacts | filter:query">
+  <li class="list-group-item" ng-repeat="contact in contacts | filter:query orderBy:sortby">
   <div>
   <h2>{{contact.name | uppercase}}</h2>
   <h3>{{contact.phone}}</h3>
