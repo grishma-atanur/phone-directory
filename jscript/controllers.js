@@ -2,7 +2,7 @@ var myApp= angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) {
 	$routeProvider
 		.when('/homepage1', {
-			templateUrl: 'homepage1.html',
+			templateUrl: 'homePage.html',
 			controller: 'MyController'
 		})
 		.when('/edit', {
@@ -10,7 +10,7 @@ myApp.config(function($routeProvider) {
 			controller: 'MyController'
 		})
 		.otherwise({
-			redirectTo: '/homepage1'
+			redirectTo: '/homePage'
 		});
 });
 
