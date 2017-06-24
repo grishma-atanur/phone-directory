@@ -1,6 +1,6 @@
 var myApp=angular.module('myApp',[
-  'ngRoute',
-  'contactControllers'
+'ngRoute',
+'contactControllers'
 ]) ;
 myApp.config(['$routeProvider',function($routeProvider){
 $routeProvider.
@@ -9,6 +9,6 @@ templateUrl:'partials/list.html'
 controller:'ListController'
 } ).
 otherwise({
- redirectTo:'/list'
+redirectTo:'/list'
 });
 }]);
