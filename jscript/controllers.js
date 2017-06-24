@@ -5,8 +5,8 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'homePage.html',
 			controller: 'MyController'
 		})
-		.when('/edit', {
-			templateUrl: 'edit.html',
+		.when('/editContact', {
+			templateUrl: 'editContact.html',
 			controller: 'MyController'
 		})
 		.otherwise({
