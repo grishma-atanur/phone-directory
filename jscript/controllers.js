@@ -1,7 +1,7 @@
 var myApp= angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) {
 	$routeProvider
-		.when('/homepage1', {
+		.when('/homePage', {
 			templateUrl: 'homePage.html',
 			controller: 'MyController'
 		})
