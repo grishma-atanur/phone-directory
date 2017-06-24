@@ -1,0 +1,23 @@
+{
+  "name": "phone-directory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./ -a localhost -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grishma-atanur/phone-directory.git"
+  },
+  "author": "Grishma Atanur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grishma-atanur/phone-directory/issues"
+  },
+  "homepage": "https://github.com/grishma-atanur/phone-directory#readme",
+  "devDependencies": {
+      "http-server": "^0.10.0"
+    }
+}
