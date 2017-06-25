@@ -26,7 +26,11 @@
         <div class="input-group">
             <input ng-model='query' type="text" class="form-control" placeholder="Search....." autofocus>
   <span class="input-group-btn">
-    <button class="btn btn-primary" type="button">More</button>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Delete</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
   </span>
         </div>
     </div>

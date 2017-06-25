@@ -3,17 +3,22 @@
     <h2 class="text-xs-center">Add Contact</h2>
 
     <div class="input-group input-group-lg">
+
         <ul class="list-group">
 
-            <li class="list-group-item"><input type="text" class="form-control" placeholder="Name"
+
+            <li class="list-group-item"><input type="text"  ng-model="name" class="form-control" placeholder="Name"
                                                aria-describedby="sizing-addon1"></li>
-            <li class="list-group-item"><input type="text" class="form-control" placeholder="phone number"
+            <li class="list-group-item"><input type="text" ng-model="phoneNumber" class="form-control" placeholder="phone number"
                                                aria-describedby="sizing-addon1"></li>
-            <li class="list-group-item"><input type="text" class="form-control" placeholder="Email id"
+            <li class="list-group-item"><input type="text" ng-model="emailId" class="form-control" placeholder="Email id"
                                                aria-describedby="sizing-addon1"></li>
+
+                 <button type="submit" ng-click="addContact()" class="btn">Save</button>
+            <button type="button" class="btn">Cancel</button>
+
         </ul>
-        <button type="button" class="btn">Save</button>
-        <button type="button" class="btn">Cancel</button>
+
 
     </div>
 </div>
