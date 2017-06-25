@@ -19,8 +19,18 @@ myApp.config(function ($routeProvider) {
 });
 
 
-myApp.controller('MyController', ['$scope', function MyController($scope) {
-    $scope.contacts = [
+myApp.controller('MyController', ['$scope','ContactService', function MyController($scope, ContactService) {
+    $scope.contacts =ContactService.names;
+}])
+.controller('addcontactController',['$scope',function($scope){
+    $scope.name='this';
+    $scope.addContact=function() {
+        alert("contact details:" + "" + $scope.name + "" + $scope.phoneNumber + "" + $scope.emailId);
+    }
+
+}]);
+myApp.service('ContactService',function(){
+    this.names=[
         {
             "name": "Barot Bellingham",
             "phone": "122345666",
@@ -43,12 +53,5 @@ myApp.controller('MyController', ['$scope', function MyController($scope) {
         },
 
     ]
-}])
-.controller('addcontactController',['$scope',function($scope){
-    $scope.name='this';
-    $scope.addContact=function() {
-        alert("contact details:" + "" + $scope.name + "" + $scope.phoneNumber + "" + $scope.emailId);
-    }
 
-}]);
-
+});
