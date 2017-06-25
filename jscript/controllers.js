@@ -22,10 +22,15 @@ myApp.config(function ($routeProvider) {
 myApp.controller('MyController', ['$scope','ContactService', function MyController($scope, ContactService) {
     $scope.contacts =ContactService.names;
 }])
-.controller('addcontactController',['$scope',function($scope){
-    $scope.name='this';
+.controller('addcontactController',['$scope', 'ContactService',function($scope, ContactService){
     $scope.addContact=function() {
-        alert("contact details:" + "" + $scope.name + "" + $scope.phoneNumber + "" + $scope.emailId);
+        var newContact = {
+            "name": $scope.name,
+            "phone": $scope.phoneNumber,
+            "Email-id": $scope.emailId
+        };
+        ContactService.names.push(newContact);
+        alert("Data saved.");
     }
 
 }]);
