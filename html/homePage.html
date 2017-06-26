@@ -43,6 +43,7 @@
                 <h2>{{contact.name | uppercase}}</h2>
 
                 <h3>{{contact.phone}}</h3>
+                <button type="submit" ng-click="deleteContact(contact,$index)" class="btn">Delete</button>
             </div>
         </li>
 

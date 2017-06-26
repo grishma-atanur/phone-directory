@@ -20,7 +20,13 @@ myApp.config(function ($routeProvider) {
 
 
 myApp.controller('MyController', ['$scope','ContactService', function MyController($scope, ContactService) {
-    $scope.contacts =ContactService.names;
+    $scope.contacts = ContactService.names;
+
+    $scope.deleteContact = function (contact,$index) {
+        ContactService.deleteContact(contact);
+        $scope.contacts.splice($index, 1);
+    };
+
 }])
 .controller('addcontactController',['$scope', 'ContactService',function($scope, ContactService){
     $scope.addContact=function() {
@@ -58,5 +64,8 @@ myApp.service('ContactService',function(){
         },
 
     ]
+    this.deleteContact=function(contact){
+        console.log("the"+ " " +contact.name + " " + "has been deleted");
+    };
 
 });
