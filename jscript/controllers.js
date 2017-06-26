@@ -7,7 +7,7 @@ myApp.config(function ($routeProvider) {
         })
         .when('/editContact', {
             templateUrl: 'editContact.html',
-            controller: 'MyController'
+            controller: 'editController'
         })
         .when('/addContact', {
             templateUrl: 'addContact.html',
@@ -19,29 +19,46 @@ myApp.config(function ($routeProvider) {
 });
 
 
-myApp.controller('MyController', ['$scope','ContactService', function MyController($scope, ContactService) {
+myApp.controller('MyController', ['$scope', 'ContactService', '$location', function MyController($scope, ContactService, $location) {
     $scope.contacts = ContactService.names;
 
-    $scope.deleteContact = function (contact,$index) {
+    $scope.deleteContact = function (contact, $index) {
         ContactService.deleteContact(contact);
         $scope.contacts.splice($index, 1);
+
+    };
+    $scope.onEdit = function($index){
+        ContactService.selectedId = $index;
+        console.log("setting value selectedId to : " + $index);
+        $location.path( "/editContact" );
     };
 
 }])
-.controller('addcontactController',['$scope', 'ContactService',function($scope, ContactService){
-    $scope.addContact=function() {
-        var newContact = {
-            "name": $scope.name,
-            "phone": $scope.phoneNumber,
-            "Email-id": $scope.emailId
+    .controller('addcontactController', ['$scope', 'ContactService', function ($scope, ContactService) {
+        $scope.addContact = function () {
+            var newContact = {
+                "name": $scope.name,
+                "phone": $scope.phoneNumber,
+                "Email-id": $scope.emailId
+            };
         };
-        ContactService.names.push(newContact);
-        alert("Data saved.");
-    }
 
-}]);
-myApp.service('ContactService',function(){
-    this.names=[
+
+    }])
+    .controller('editController',['$scope','ContactService',function($scope,ContactService){
+        $scope.init = function () {
+            console.log("Inside $scope.init. selectedId is " + ContactService.selectedId);
+            var name = ContactService.names[ContactService.selectedId];
+            $scope.name = name.name;
+            $scope.phone = name.phone;
+            $scope.EmailId = name.EmailId;
+
+
+        };
+    }]);
+myApp.service('ContactService', function () {
+    this.selectedId;
+    this.names = [
         {
             "name": "Barot Bellingham",
             "phone": "122345666",
@@ -50,22 +67,23 @@ myApp.service('ContactService',function(){
         {
             "name": "grishma",
             "phone": "9535469419",
-            "Email-id": "grishma@gmail.com"
+            "EmailId": "grishma@gmail.com"
         },
         {
             "name": "core scientist",
             "phone": "9742399049",
-            "Email-id": "corescientist@gmail.com"
+            "EmailId": "corescientist@gmail.com"
         },
         {
             "name": "neha",
             "phone": "677987698",
-            "Email-id": "neha@gmail.com"
+            "EmailId": "neha@gmail.com"
         },
 
     ]
-    this.deleteContact=function(contact){
-        console.log("the"+ " " +contact.name + " " + "has been deleted");
+    this.deleteContact = function (contact) {
+        console.log("the" + " " + contact.name + " " + "has been deleted");
     };
+
 
 });

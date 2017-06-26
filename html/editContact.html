@@ -1,6 +1,4 @@
-<div>
-    <input type="text" ng-model="hello"/>
-
+<div ng-init="init()">
     <div class="container p-t-2">
         <!--search box-->
         <h2 class="text-xs-center">Edit</h2>
@@ -8,14 +6,15 @@
         <div class="input-group input-group-lg">
             <ul class="list-group">
 
-                <li class="list-group-item"><input type="text" class="form-control" placeholder="Name:to be edited"
+                <li class="list-group-item"><input type="text" ng-model="name"
+                                                   class="form-control"
                                                    aria-describedby="sizing-addon1"></li>
-                <li class="list-group-item"><input type="text" class="form-control"
-                                                   placeholder="phone number:to be edited"
+                <li class="list-group-item"><input type="text" ng-model="phone" class="form-control"
+
                                                    aria-describedby="sizing-addon1"></li>
-                <li class="list-group-item"><input type="text" class="form-control" placeholder="Email id:to be edited"
+                <li class="list-group-item"><input type="text" ng-model="EmailId"class="form-control"
                                                    aria-describedby="sizing-addon1"></li>
-                <button type="button" class="btn">Save</button>
+                <button type="button" class="btn">save</button>
                 <button type="button" class="btn">Cancel</button>
             </ul>
         </div>
